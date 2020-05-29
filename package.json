@@ -31,7 +31,6 @@
     "prettier": "^2.0.5"
   },
   "dependencies": {
-    "cloudmersive-image-api-client": "^1.3.1",
     "rimraf": "^3.0.2"
   },
   "lint-staged": {
