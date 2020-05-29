@@ -1,0 +1,54 @@
+{
+  "name": "nameforcar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run clean && npm run build && node dist/main.js",
+    "clean": "rimraf ./dist",
+    "build": "babel -d ./dist ./src -s",
+    "list:js": "eslint ./src",
+    "test": "jest",
+    "lint-staged": "lint-staged"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.1",
+    "@babel/node": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "babel-jest": "^26.0.1",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "jest": "^26.0.1",
+    "jest-cli": "^26.0.1",
+    "lint-staged": "^10.2.7",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "cloudmersive-image-api-client": "^1.3.1",
+    "rimraf": "^3.0.2"
+  },
+  "lint-staged": {
+    "*.js": "eslint"
+  },
+  "pre-commit": "lint-staged",
+  "eslintConfig": {
+    "root": true,
+    "plugins": ["jest"],
+    "extends": [
+      "airbnb-base",
+      "prettier",
+      "plugin:jest/recommended"
+    ],
+    "env": {
+      "node": true,
+      "jest": true
+    }
+  }
+}
